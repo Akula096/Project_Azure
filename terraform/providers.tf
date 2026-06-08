@@ -9,5 +9,4 @@ terraform {
 
 provider "azurerm" {
    features {}
-   subscription_id = "${{ secrets.AZURE_CLIENT_ID }}"
 }
