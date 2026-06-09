@@ -1,10 +1,7 @@
 name: Deploy Azure Resources 
 
 on:
-    push:
-        branches: [main]
-        paths: 
-            - terraform/**
+    pull_request: 
 
 permissions: 
     id-token: write
@@ -31,15 +28,9 @@ jobs:
             - name: Terraform Init
               run: |
                 cd terraform
-                terraform validate
                 terraform init
-            - name: Terraform Plan
+                terraform validate
+            - name: Terraform Plam
               run: |
                 cd terraform
                 terraform plan
-            
-            - name: Terraform Apply
-              run: | 
-                cd terraform
-                terraform apply 
-            
