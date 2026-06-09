@@ -30,7 +30,7 @@ jobs:
             
             - name: Teeraform Auth
               run: |
-                 echo "subscription_id=${{secrets.AZURE_SUBSCRIPTION_ID }} >> $GITHUB_ENV"
+                 echo "ARM_SUBSCRIPTION_ID=${{secrets.AZURE_SUBSCRIPTION_ID }} >> $GITHUB_ENV"
             
             - name: Terraform Init
               run: |
