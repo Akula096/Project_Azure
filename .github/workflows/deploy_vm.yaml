@@ -1,4 +1,4 @@
-name: Deploy Azure Resources 
+name: Plan
 
 on:
     push:
@@ -30,7 +30,9 @@ jobs:
             
             - name: Teeraform Auth
               run: |
+                 echo "ARM_USE_OIDC=true" >> $GIHUB_ENV
                  echo "ARM_SUBSCIPTION_ID=${{secrets.AZURE_SUBSCRIPTION_ID }}" >> $GITHUB_ENV
+                 
             
             - name: Terraform Init
               run: |
